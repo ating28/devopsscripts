@@ -145,35 +145,5 @@ Driver=/opt/teradata/jdbc/terajdbc4.jar
 
 [Oracle 12.1 JDBC driver]
 Description=Oracle JDBC driver for Oracle 12.1
-Driver          = /opts/oracle/instantclient_12_1/ojdbc7.jar
-' >> /etc/odbcinst.ini
-
-# Layer Cleanup
-rm -rf /tmp/*
-apt-get autoremove -y
-apt-get autoclean -y
-rm -rf /var/lib/apt/lists/*nces to applicable drivers above
-
-printf '
-[FreeTDS]
-UsageCount=2
-
-[ODBC Driver 17 for SQL Server]
-Description=Microsoft ODBC Driver 17 for SQL Server
-Driver=/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.2.so.0.1
-Threading=1
-UsageCount=1
-
-[Teradata Database ODBC Driver 16.20]
-Description=Teradata Database ODBC Driver 16.20
-Driver=/opt/teradata/client/ODBC_64/lib/tdataodbc_sb64.so
-# Note: Currently, Data Direct Driver Manager does not support Connection Pooling feature.
-
-[Teradata Database JDBC Driver 4]
-Description=Teradata Database JDBC Driver 4
-Driver=/opt/teradata/jdbc/terajdbc4.jar
-
-[Oracle 12.1 JDBC driver]
-Description=Oracle JDBC driver for Oracle 12.1
-Driver          = /opts/oracle/instantclient_12_1/ojdbc7.jar
+Driver = /opts/oracle/instantclient_12_1/ojdbc7.jar
 ' >> /etc/odbcinst.ini
