@@ -147,3 +147,6 @@ Driver=/opt/teradata/jdbc/terajdbc4.jar
 Description=Oracle JDBC driver for Oracle 12.1
 Driver = /opts/oracle/instantclient_12_1/ojdbc7.jar
 ' >> /etc/odbcinst.ini
+
+# Clean up temp files
+rm -rf /tmp/*
