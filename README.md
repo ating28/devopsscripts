@@ -17,8 +17,7 @@ I would also include other common build dependencies like ```wget curl apt-trans
 
 ```
 cd /tmp
-git clone 
-https://github.com/nreith/devopsscripts.git
+git clone https://github.com/nreith/devopsscripts.git
 ```
 
 3. cd and chmod all the scripts, then run the ones you want
