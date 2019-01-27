@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run script as root/sudo
-# Use grep -v "# Java$" if you want to skip installing Java
+# Use grep -v '# Java$' if you want to skip installing Java
 
 # Install common builddeps for Ubuntu
 apt-get clean -y && apt-get update -y
