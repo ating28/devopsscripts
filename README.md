@@ -40,6 +40,24 @@ chmod +x myscript.sh
 ```
 Not super complex, but I'm trying to save time here and it's better than manually commenting out lines in the file.
 
+5. Layer cleanup for Docker builds
+
+If you are actually using docker, I highly recommend running something like this for layer cleanup at the end of each RUN chunk to clear temporary and unneccessary files and save space.
+
+```
+RUN \
+a bunch \
+&& of Linux \
+&& stuff installed \
+&& here \
+#
+# Layer Cleanup
+&& rm -rf /tmp/* \
+&& apt-get autoremove -y \
+&& apt-get autoclean -y \
+&& rm -rf /var/lib/apt/lists/*
+```
+
 ## What are these scripts for?
 
 I wrote these scripts primarily for modular use in installing and configging commonly used things for Data Science in Docker (ubuntu:16.04), but they will work on any Ubuntu 16.04 based system. When it comes to Docker bases, I prefer phusion/baseimage:latest over vanilla Ubuntu 16.04, as it's Ubuntu slimmed down and optimized for running in containers. Check out their Git repo [here](https://github.com/phusion/baseimage-docker) and their dockerhub images [here](https://hub.docker.com/r/phusion/baseimage/)
