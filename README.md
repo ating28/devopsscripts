@@ -15,14 +15,16 @@ I would also include other common build dependencies like ```wget curl apt-trans
 
 2. In your install script or Dockerfile, git clone this repo to a temporary folder. Of course, this will require internet access or a proxy if you're inside of a corporate network. But so will all of the installs anyway, so that's assumed.
 
-```cd /tmp
+```
+cd /tmp
 git clone 
 https://github.com/nreith/devopsscripts.git
 ```
 
 3. cd and chmod all the scripts, then run the ones you want
 
-```cd devopsscripts/
+```
+cd devopsscripts/
 chmod +x *
 ./name_of_script.sh
 ```
@@ -31,7 +33,8 @@ chmod +x *
 
 To make these scripts a tad more flexible in a lazy way, I have appended comments to lines that could easily be filtered out with grep. For example, with the ml server script, if you only want to install R and not python, you could do the following:
 
-```cd /tmp/devopsscripts
+```
+cd /tmp/devopsscripts
 grep -v "python" install_mlserver9.3.0.sh > myscript.sh
 chmod +x myscript.sh
 ./myscript.sh
