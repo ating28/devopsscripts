@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Run script as root/sudo
+# Use grep -v "# Java$" if you want to skip installing Java
+
 # Install common builddeps for Ubuntu
 apt-get clean -y && apt-get update -y
 apt-get install -y --no-install-recommends \
@@ -43,9 +46,9 @@ apt-get update -o Acquire::CompressionTypes::Order::=gz
     touch /etc/mdadm/mdadm.conf
     echo "ARRAY <ignore> devices=/dev/sda" >> /etc/mdadm/mdadm.conf
 
-# Install Java
-add-apt-repository ppa:linuxuprising/java
-apt-get update -y
-echo oracle-java11-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-apt-get install -y --no-install-recommends oracle-java11-installer
-apt-get install oracle-java11-set-default
+# Install Java                                                                                                      # Java
+add-apt-repository ppa:linuxuprising/java                                                                           # Java
+apt-get update -y                                                                                                   # Java
+echo oracle-java11-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections      # Java
+apt-get install -y --no-install-recommends oracle-java11-installer                                                  # Java
+apt-get install oracle-java11-set-default                                                                           # Java  
