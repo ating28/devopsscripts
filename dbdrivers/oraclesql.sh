@@ -31,7 +31,3 @@ Description=Oracle JDBC driver for Oracle 12.1
 Driver = /opts/oracle/instantclient_12_1/ojdbc7.jar
 
 ' >> /etc/odbcinst.ini
-
-# Cleanup
-apt-get clean -y && apt-get autoremove -y
-rm -rf /tmp/*
