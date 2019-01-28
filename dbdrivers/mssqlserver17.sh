@@ -8,7 +8,7 @@ apt-get install -y curl wget apt-transport-https nano unzip
 
 # MS SQL Server Drivers
 cd /tmp && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/microsoft-prod.list
 apt-get update -y
 ACCEPT_EULA=Y apt-get install -y --no-install-recommends msodbcsql17
 # optional: for bcp and sqlcmd
