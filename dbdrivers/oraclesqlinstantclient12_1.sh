@@ -25,8 +25,6 @@ ln -s /opt/oracle/instantclient_12_2/libclntsh.so.12.1 /opt/oracle/libclntsh.so
 ln -s /opt/oracle/instantclient_12_2/libocci.so.12.1 /opt/oracle/libocci.so
 ln -s /opt/oracle/instantclient_12_2/libociei.so /opt/oracle/libociei.so
 ln -s /opt/oracle/instantclient_12_2/libnnz12.so /opt/oracle/libnnz12.so
-ln -s /opt/oracle/instantclient_12_2/odbc8.jar /opt/oracle/odbc8.jar
-ln -s /opt/oracle/instantclient_12_2/orai18n.jar /opt/oracle/orai18n.jar
 
 echo "export ORACLE_BASE=/usr/lib/instantclient_12_2" >> /home/$USER/.bashrc
 echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/oracle/instantclient_12_2" >> /home/$USER/.bashrc
@@ -36,10 +34,10 @@ echo "export ORACLE_HOME=/opt/oracle/instantclient_12_2" >> /home/$USER/.bashrc
 printf '
 [Oracle 12.2 ODBC driver]
 Description=Oracle ODBC driver for Oracle 12.2
-Driver = /opts/oracle/ojdbc8.jar
+Driver = /opts/oracle/instantclient_12_2/ojdbc8.jar
 
 [Oracle 12.2 JDBC driver]
 Description=Oracle JDBC driver for Oracle 12.2
-Driver = /opts/oracle/orai18n.jar
+Driver = /opts/oracle/instantclient_12_2/orai18n.jar
 
 ' >> /etc/odbcinst.ini
